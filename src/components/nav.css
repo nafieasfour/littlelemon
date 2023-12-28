@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  background-color: white;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-width: 100%;
+  margin: 10px;
+}
+.item{
+    margin: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+  color: rgb(73, 94, 87);
+  font-size: 20px;
+}

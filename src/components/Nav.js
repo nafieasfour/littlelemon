@@ -5,27 +5,27 @@ import Logo from "../assets/Logo.svg"
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="navigation">
       <div className="logo">
         <img src={Logo} alt="Logo" />
       </div>
       <ul>
-        <li>
+        <li className="item">
           Home
         </li>
-        <li>
+        <li className="item">
           About
         </li>
-        <li>
+        <li className="item">
           Menu
         </li>
-        <li>
+        <li className="item">
           Reservations
         </li>
-        <li>
+        <li className="item">
           Order Online
         </li>
-        <li>
+        <li className="item">
           Login
         </li>
       </ul>

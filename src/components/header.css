@@ -1,0 +1,50 @@
+.header{
+    background-color: rgb(73, 94, 87);
+    max-width: 1500px;
+    max-height: 400px;
+}
+.container{
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+.left{
+    width: 400px;
+    height: 331px;
+    display: flex;
+    flex-direction: column;
+}
+.left h1{
+    color: rgb(244, 206, 20);
+    padding-bottom: 5px;
+}
+#city{
+    color: rgb(244, 206, 20);
+    padding-top: 5px;
+}
+.left p {
+    color: black;
+    word-wrap: break-word;
+    white-space: normal;
+    width: 350px;
+    padding-top: 25px;
+}
+.buttonStyle{
+    width: 200px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.right{
+    height: 415px;
+    width: 370px;
+}
+.right img{
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+}
