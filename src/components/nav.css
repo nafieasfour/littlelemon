@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
 }
+.navigation a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .logo img {
   max-width: 100%;
@@ -12,12 +16,14 @@
 }
 .item{
     margin: 10px;
+    text-decoration: none;
 }
 
 ul {
   list-style: none;
   padding: 0;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 li {
@@ -25,4 +31,5 @@ li {
   margin-right: 20px;
   color: rgb(73, 94, 87);
   font-size: 20px;
+  text-decoration: none;
 }

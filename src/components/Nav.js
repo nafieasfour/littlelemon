@@ -11,22 +11,26 @@ const Nav = () => {
       </div>
       <ul>
         <li className="item">
-          Home
+          <a href="#home">Home</a>
+
         </li>
         <li className="item">
-          About
+          <a href="#about">About</a>
+
         </li>
         <li className="item">
-          Menu
+          <a href="#menu">Menu</a>
+
         </li>
         <li className="item">
-          Reservations
+          <a href="#reservations">Reservations</a>
+
         </li>
         <li className="item">
-          Order Online
+          <a href="#order_online">Order Online</a>
         </li>
         <li className="item">
-          Login
+        <a href="#login">Login</a>
         </li>
       </ul>
     </nav>
