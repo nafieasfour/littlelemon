@@ -30,9 +30,9 @@ const Card = () => {
     return (
         <div className="card">
             {data.map((d) => (
-                <div key={d.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <img src={d.img} alt='' style={{ width: '100%', marginBottom: '10px' }} />
-                    <div style={{ textAlign: 'center' }}>
+                <div key={d.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '20px', backgroundColor:'rgb(237, 239,238)', width: '260px', height:'440px'}}>
+                    <img src={d.img} alt='' style={{ width: 260, height: 185, borderRadius: 5 }} />
+                    <div style={{display:'inline', justifyContent:'space-between'}}>
                         <strong>{d.name}</strong>
                         <p>{d.price}</p>
                     </div>

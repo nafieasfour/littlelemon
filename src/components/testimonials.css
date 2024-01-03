@@ -1,0 +1,16 @@
+.theySaid{
+    display: flex;
+    flex-direction: row;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding: 10px;
+}
+img{
+    width: 45px;
+    height: 45px;
+}
+.middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

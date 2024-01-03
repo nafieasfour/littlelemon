@@ -7,6 +7,7 @@ import Specials from "./components/Specials";
 
 
 import './App.css';
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Nav />
       <Header />
       <Specials />
+      <Testimonials/>
       <Main />
       <Footer />
     </>
