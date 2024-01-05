@@ -1,0 +1,17 @@
+.desc {
+  display: flex;
+  width: 1000px;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+#descheader {
+  text-align: left;
+  color: black;
+}
+
+#story{
+    text-align: justify;
+}

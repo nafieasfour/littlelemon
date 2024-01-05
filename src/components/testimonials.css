@@ -1,16 +1,26 @@
-.theySaid{
-    display: flex;
-    flex-direction: row;
-    padding-left: 250px;
-    padding-right: 250px;
-    padding: 10px;
+h1 {
+  text-align: center;
 }
-img{
-    width: 45px;
-    height: 45px;
+.theySaid {
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 250px;
+  padding-right: 250px;
 }
-.middle{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+img {
+  width: 70px;
+  height: 60px;
+  border-radius: 5px;
+}
+.person {
+  padding: 20px;
+}
+.middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
