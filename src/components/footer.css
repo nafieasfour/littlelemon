@@ -8,6 +8,19 @@
   padding-right: 250px;
 }
 .imgend {
-    width: 170px;
-    height: 280px;
+  width: 170px;
+  height: 280px;
+  padding-right: 40px;
+}
+#bottomnav {
+  display: flex;
+  flex-direction: column;
+}
+#bottomcontact {
+  display: flex;
+  flex-direction: column;
+}
+#bottomsocialmedia {
+  display: flex;
+  flex-direction: column;
 }
