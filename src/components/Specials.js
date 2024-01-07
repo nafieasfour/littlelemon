@@ -1,5 +1,5 @@
 import "./specials.css"
-import Card from "./Card";
+import Card from "./Card.js";
 import React from 'react'
 
 export default function Specials() {
