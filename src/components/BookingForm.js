@@ -1,5 +1,7 @@
 import React, { useState, useReducer, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchAPI, submitAPI } from "./Api.js";
+import "./bookingform.css"
 
 // Reducer function to handle state changes for availableTimes
 const timesReducer = (state, action) => {
@@ -7,23 +9,37 @@ const timesReducer = (state, action) => {
     case "UPDATE_TIMES":
       return action.payload;
     case "INITIALIZE_TIMES":
-      return initializeTimes();
+      return action.payload;
     default:
       return state;
   }
 };
 
 // Function to update availableTimes based on the selected date
-const updateTimes = (selectedDate) => {
-  // For now, return the same available times regardless of the date
-  // You can replace this logic with your actual implementation
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+const updateTimes = async (selectedDate) => {
+  try {
+    const updatedTimes = await fetchAPI(selectedDate);
+    return updatedTimes;
+  } catch (error) {
+    console.error("Error fetching available times:", error);
+    return [];
+  }
 };
 
 // Function to initialize the initial state for availableTimes
-const initializeTimes = () => {
-  // You can replace this with your actual initial state logic
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+const initializeTimes = async () => {
+  try {
+    // Create a Date object to represent today's date
+    const today = new Date();
+    // Format the date as YYYY-MM-DD
+    const todayFormatted = today.toISOString().split("T")[0];
+
+    const initialTimes = await fetchAPI(todayFormatted);
+    return initialTimes;
+  } catch (error) {
+    console.error("Error initializing available times:", error);
+    return [];
+  }
 };
 
 export default function BookingForm() {
@@ -37,30 +53,51 @@ export default function BookingForm() {
   const [availableTimes, dispatch] = useReducer(
     timesReducer,
     [],
-    initializeTimes
+    (initialState) => initialState
   );
 
   // useEffect to initialize the availableTimes when the component mounts
   useEffect(() => {
-    dispatch({ type: "INITIALIZE_TIMES" });
-  }, []);
+    const initialize = async () => {
+      const initialTimes = await initializeTimes();
+      dispatch({ type: "INITIALIZE_TIMES", payload: initialTimes });
+    };
 
-  const handleSubmit = (e) => {
+    initialize();
+  }, []); // Empty dependency array to ensure it runs once on mount
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Replace this with your actual form submission logic
-    console.log("Form submitted with values:", {
+
+    // Prepare form data
+    const formData = {
       date,
       time,
       guests,
       occasion,
-    });
-    console.log("hi");
+    };
+
+    try {
+      // Replace this with your actual form submission logic
+      const submissionResult = await submitAPI(formData);
+
+      if (submissionResult) {
+        console.log("Form submitted successfully!");
+        // Redirect or show a success message as needed
+      } else {
+        console.error("Form submission failed.");
+        // Handle submission failure
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Handle submission error
+    }
   };
 
   // Function to handle date change and update available times
-  const handleDateChange = (e) => {
+  const handleDateChange = async (e) => {
     const selectedDate = e.target.value;
-    const updatedTimes = updateTimes(selectedDate);
+    const updatedTimes = await updateTimes(selectedDate);
     dispatch({ type: "UPDATE_TIMES", payload: updatedTimes });
 
     // Set the date in the state
@@ -69,7 +106,7 @@ export default function BookingForm() {
 
   return (
     <form
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+      style={{ display: "grid", maxWidth: "200px", gap: "20px", paddingLeft: "600px" }}
       onSubmit={handleSubmit}
     >
       <label htmlFor="res-date">Choose date</label>

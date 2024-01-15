@@ -1,13 +1,16 @@
 import React from 'react'
 import BookingForm from './BookingForm.js'
 import { Link } from 'react-router-dom'
+import Nav from "./Nav.js"
+import Footer from "./Footer.js"
 
 export default function BookingPage() {
   return (
     <div>
-      <h1>Welcome to Our Restaurant</h1>
       <Link to="/booking">
-        <BookingForm/>
+        <Nav/>
+        <BookingForm />
+        <Footer/>
       </Link>
     </div>
   )
